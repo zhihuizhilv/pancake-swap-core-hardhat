@@ -2,7 +2,7 @@
   "abi": {},
   "deployedContract": {
     "pancakeFactory": {
-      "address": "0x26c149cD1Bc46B6f413c75bb7d138f3d41e18d44",
+      "address": "0x19Eb1f583eEC6572dD9Bc0579523f6Ae16032E0A",
       "contractName": "PancakeFactory",
       "feeToSetter": "0xa2D644EF59A735f6249D76aAB98F071523129Bb0"
     }
