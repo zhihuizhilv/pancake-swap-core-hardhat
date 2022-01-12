@@ -25,10 +25,19 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 const config: HardhatUserConfig = {
   solidity: "0.5.16",
   networks: {
-    ropsten: {
-      url: process.env.ROPSTEN_URL || "",
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    ganache: {
+      url: "http://localhost:8545",
+      accounts: process.env.HARDHAT_PRIKEY !== undefined ? [process.env.HARDHAT_PRIKEY] : [],
+    },
+    bsc_testnet: {
+      url: process.env.HARDHAT_RPC || "https://data-seed-prebsc-1-s1.binance.org:8545/",
+      gas: 8000000,
+      accounts: process.env.HARDHAT_PRIKEY !== undefined ? [process.env.HARDHAT_PRIKEY] : [],
+    },
+    bsc: {
+      url: process.env.HARDHAT_RPC || "https://bsc-dataseed4.binance.org/",
+      gas: 8000000,
+      accounts: process.env.HARDHAT_PRIKEY !== undefined ? [process.env.HARDHAT_PRIKEY] : [],
     },
   },
   gasReporter: {

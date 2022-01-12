@@ -28,7 +28,7 @@ contract PancakeFactory is IPancakeFactory {
         require(token0 != address(0), 'Pancake: ZERO_ADDRESS');
         require(getPair[token0][token1] == address(0), 'Pancake: PAIR_EXISTS'); // single check is sufficient
         bytes memory bytecode = type(PancakePair).creationCode;
-        bytes32 salt = keccak256(abi.encodePacked(token0, token1));
+        bytes32 salt = keccak256(abi.encodePacked(token0, token1, "lzh"));
         assembly {
             pair := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
