@@ -5,7 +5,6 @@ const BigNumber = ethers.BigNumber;
 
 module.exports = {
     ganache: {
-
     },
 
     bsc: {
